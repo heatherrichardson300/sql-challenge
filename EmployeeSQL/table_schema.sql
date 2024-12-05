@@ -7,32 +7,37 @@ CREATE TABLE departments (
 -- Create Titles table
 CREATE TABLE titles (
     title_id VARCHAR(5) PRIMARY KEY,
-	title VARCHAR(50)
+    title VARCHAR(50)
 );
 
 -- Create Employees table
 CREATE TABLE employees (
     emp_no INT PRIMARY KEY,
-	emp_title_id VARCHAR(5),
+    emp_title_id VARCHAR(5),
     birth_date DATE,
     first_name VARCHAR(50),
     last_name VARCHAR(50),
     gender VARCHAR(1),
     hire_date DATE,
-	FOREIGN KEY (emp_title_id) REFERENCES titles(title_id)
+    FOREIGN KEY (emp_title_id) REFERENCES titles(title_id)
 );
 
 -- Create Salaries table
 CREATE TABLE salaries (
-	emp_no INT,
+    emp_no INT,
     salary INT,
     FOREIGN KEY (emp_no) REFERENCES employees(emp_no)
 );
 
 -- Create Department Employees table
 CREATE TABLE dept_emp (
+<<<<<<< HEAD
 	emp_no INT,
 	dept_no VARCHAR(5),
+=======
+    emp_no INT,
+    dept_no VARCHAR(5),
+>>>>>>> 59934cb7a2cedfe93dc22b5045184f82ba3d7ef1
     FOREIGN KEY (emp_no) REFERENCES employees(emp_no),
     FOREIGN KEY (dept_no) REFERENCES departments(dept_no)
 );
@@ -40,7 +45,7 @@ CREATE TABLE dept_emp (
 -- Create Department Managers table
 CREATE TABLE dept_manager (
     dept_no VARCHAR(5),
-	emp_no INT,
+    emp_no INT,
     FOREIGN KEY (dept_no) REFERENCES departments(dept_no),
     FOREIGN KEY (emp_no) REFERENCES employees(emp_no)
 );
