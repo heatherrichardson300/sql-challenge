@@ -122,4 +122,4 @@ FROM
 GROUP BY 
 	last_name
 ORDER BY 
-   name_frequency DESC;
+	name_frequency DESC;
